@@ -10,7 +10,10 @@ while True:
         for reading in readings_list:
             try:
                 new_value = int(reading)
-                integer_readings.append(new_value)
+                if new_value < 0:
+                    valid = False
+                else:
+                    integer_readings.append(new_value)
             except ValueError:
                 valid = False
         if valid == False:
